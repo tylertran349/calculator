@@ -32,6 +32,24 @@ body {
     background: silver;
     width: 82.5%;
     height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#operators-and-nums {
+    margin-top: 16px;
+    margin-right: 16px;
+    color: black;
+    font-size: 24px;
+}
+
+#current-calculation {
+    margin-bottom: 16px;
+    margin-right: 16px;
+    color: black;
+    font-size: 36px;
 }
 
 #buttons-container {

@@ -76,3 +76,13 @@ body {
     border: 0;
     border-radius: 8px;
 }
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #36454F;
+    font-size: 18px;
+    padding-bottom: 8px;
+}

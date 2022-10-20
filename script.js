@@ -141,7 +141,6 @@ function add() {
     operatorsAndNums.push("+");
     screenTop.textContent += " + ";
     lastInputType = "operator";
-    console.table(operatorsAndNums);
 }
 
 function subtract() {
@@ -156,7 +155,6 @@ function subtract() {
     operatorsAndNums.push("-");
     screenTop.textContent += " - ";
     lastInputType = "operator";
-    console.table(operatorsAndNums);
 }
 
 function multiply() {
@@ -171,7 +169,6 @@ function multiply() {
     operatorsAndNums.push("*");
     screenTop.textContent += " * ";
     lastInputType = "operator";
-    console.table(operatorsAndNums);
 }
 
 function divide() {
@@ -186,7 +183,6 @@ function divide() {
     operatorsAndNums.push("/");
     screenTop.textContent += " ÷ ";
     lastInputType = "operator";
-    console.table(operatorsAndNums);
 }
 
 function calculateButton() {
@@ -198,7 +194,6 @@ function calculateButton() {
 }
 
 function calculate() {
-    console.log("Current running number: " + currentRunningNumber);
     if(lastInputType === "number") {
         operatorsAndNums.push(currentRunningNumber);
         screenTop.textContent += currentRunningNumber;
@@ -229,9 +224,7 @@ function calculate() {
     }
     operatorsAndNums = [];
     operatorsAndNums.push(currentCalculation);
-    console.table(operatorsAndNums);
     currentRunningNumber = currentCalculation;
-    console.log("Current calculation: " + currentCalculation);
     screenBottom.textContent = currentCalculation;
     return currentCalculation;
 }

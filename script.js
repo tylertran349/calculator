@@ -10,13 +10,12 @@ function seven() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "7";
         currentCalculation = currentRunningNumber;
-        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber;
+        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
         return;
     }
     currentRunningNumber += "7";
-    screenBottom.textContent = currentRunningNumber;
+    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
     lastInputType = "number";
 }
 
@@ -24,13 +23,12 @@ function four() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "4";
         currentCalculation = currentRunningNumber;
-        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber;
+        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
         return;
     }
     currentRunningNumber += "4";
-    screenBottom.textContent = currentRunningNumber;
+    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
     lastInputType = "number";
 }
 
@@ -38,13 +36,12 @@ function one() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "1";
         currentCalculation = currentRunningNumber;
-        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber;
+        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
         return;
     }
     currentRunningNumber += "1";
-    screenBottom.textContent = currentRunningNumber;
+    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
     lastInputType = "number";
 }
 
@@ -52,13 +49,12 @@ function zero() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "0";
         currentCalculation = currentRunningNumber;
-        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber;
+        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
         return;
     }
     currentRunningNumber += "0";
-    screenBottom.textContent = currentRunningNumber;
+    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
     lastInputType = "number";
 }
 
@@ -66,13 +62,12 @@ function eight() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "8";
         currentCalculation = currentRunningNumber;
-        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber;
+        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
         return;
     }
     currentRunningNumber += "8";
-    screenBottom.textContent = currentRunningNumber;
+    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
     lastInputType = "number";
 }
 
@@ -80,13 +75,12 @@ function five() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "5";
         currentCalculation = currentRunningNumber;
-        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber;
+        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
         return;
     }
     currentRunningNumber += "5";
-    screenBottom.textContent = currentRunningNumber;
+    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
     lastInputType = "number";
 }
 
@@ -94,13 +88,12 @@ function two() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "2";
         currentCalculation = currentRunningNumber;
-        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber;
+        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
         return;
     }
     currentRunningNumber += "2";
-    screenBottom.textContent = currentRunningNumber;
+    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
     lastInputType = "number";
 }
 
@@ -108,13 +101,12 @@ function nine() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "9";
         currentCalculation = currentRunningNumber;
-        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber;
+        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
         return;
     }
     currentRunningNumber += "9";
-    screenBottom.textContent = currentRunningNumber;
+    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
     lastInputType = "number";
 }
 
@@ -122,13 +114,12 @@ function six() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "6";
         currentCalculation = currentRunningNumber;
-        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber;
+        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
         return;
     }
     currentRunningNumber += "6";
-    screenBottom.textContent = currentRunningNumber;
+    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
     lastInputType = "number";
 }
 
@@ -136,13 +127,12 @@ function three() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "3";
         currentCalculation = currentRunningNumber;
-        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber;
+        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
         return;
     }
     currentRunningNumber += "3";
-    screenBottom.textContent = currentRunningNumber;
+    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
     lastInputType = "number";
 }
 
@@ -160,7 +150,7 @@ function add() {
     }
 
     operatorsAndNums.push(currentRunningNumber);
-    screenTop.textContent = calculate();
+    screenTop.textContent = +(Math.round(calculate() + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
     currentRunningNumber = "";
     operatorsAndNums.push("+");
     screenTop.textContent += " + ";
@@ -174,7 +164,7 @@ function subtract() {
     }
 
     operatorsAndNums.push(currentRunningNumber);
-    screenTop.textContent = calculate();
+    screenTop.textContent = +(Math.round(calculate() + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
     currentRunningNumber = "";
     operatorsAndNums.push("-");
     screenTop.textContent += " - ";
@@ -188,7 +178,7 @@ function multiply() {
     }
 
     operatorsAndNums.push(currentRunningNumber);
-    screenTop.textContent = calculate();
+    screenTop.textContent = +(Math.round(calculate() + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
     currentRunningNumber = "";
     operatorsAndNums.push("*");
     screenTop.textContent += " * ";
@@ -202,7 +192,7 @@ function divide() {
     }
 
     operatorsAndNums.push(currentRunningNumber);
-    screenTop.textContent = calculate();
+    screenTop.textContent = +(Math.round(calculate() + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
     currentRunningNumber = "";
     operatorsAndNums.push("/");
     screenTop.textContent += " ÷ ";
@@ -223,8 +213,6 @@ function calculate() {
         screenTop.textContent += currentRunningNumber;
     }
     currentCalculation = +(operatorsAndNums[0]);
-    currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
-
     for(let i = 1; i < operatorsAndNums.length - 1; i++) {
         // If dividing by 0, reset calculator to default values and output error
         if(operatorsAndNums[i] === "/" && operatorsAndNums[i+1] === "0") {
@@ -248,46 +236,45 @@ function calculate() {
             currentCalculation *= +(operatorsAndNums[i+1]);
         }
     }
-    currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
     operatorsAndNums = [];
     operatorsAndNums.push(currentCalculation);
     currentRunningNumber = currentCalculation;
-    screenBottom.textContent = currentCalculation;
+    screenBottom.textContent = +(Math.round(currentCalculation + "e" + 3)  + "e-" + 3); // Round decimal numbers to 3 decimal places
     return currentCalculation;
 }
 
 // Add keyboard support
 document.addEventListener("keydown", onKeyPress);
-function onKeyPress(e) {
-    if(e.key === "7") {
+function onKeyPress(k) {
+    if(k.key === "7") {
         seven();
-    } else if(e.key === "4") {
+    } else if(k.key === "4") {
         four();
-    } else if(e.key === "1") {
+    } else if(k.key === "1") {
         one();
-    } else if(e.key === "0") {
+    } else if(k.key === "0") {
         zero();
-    } else if(e.key === "8") {
+    } else if(k.key === "8") {
         eight();
-    } else if(e.key === "5") {
+    } else if(k.key === "5") {
         five();
-    } else if(e.key === "2") {
+    } else if(k.key === "2") {
         two();
-    } else if(e.key === "9") {
+    } else if(k.key === "9") {
         nine();
-    } else if(e.key === "6") {
+    } else if(k.key === "6") {
         six();
-    } else if(e.key === "3") {
+    } else if(k.key === "3") {
         three();
-    } else if(e.key === "=" || e.key === "Enter") {
+    } else if(k.key === "=" || k.key === "Enter") {
         calculateButton();
-    } else if(e.key === "/") {
+    } else if(k.key === "/") {
         divide();
-    } else if(e.key === "*") {
+    } else if(k.key === "*") {
         multiply();
-    } else if(e.key === "-") {
+    } else if(k.key === "-") {
         subtract();
-    } else if(e.key === "+") {
+    } else if(k.key === "+") {
         add();
     }
 }

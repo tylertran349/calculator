@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    background-image: linear-gradient(to bottom right, #CCFBFF, #EF96C5);
+    background-image: linear-gradient(to bottom right, #CCFBFF, #EF96C5); /* Add gradient */
     display: flex;
     flex-direction: column;
     justify-content: center;

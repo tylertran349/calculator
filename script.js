@@ -255,3 +255,40 @@ function calculate() {
     screenBottom.textContent = currentCalculation;
     return currentCalculation;
 }
+
+// Add keyboard support
+document.addEventListener("keydown", onKeyPress);
+function onKeyPress(e) {
+    console.log(e.key);
+    if(e.key === "7") {
+        seven();
+    } else if(e.key === "4") {
+        four();
+    } else if(e.key === "1") {
+        one();
+    } else if(e.key === "0") {
+        zero();
+    } else if(e.key === "8") {
+        eight();
+    } else if(e.key === "5") {
+        five();
+    } else if(e.key === "2") {
+        two();
+    } else if(e.key === "9") {
+        nine();
+    } else if(e.key === "6") {
+        six();
+    } else if(e.key === "3") {
+        three();
+    } else if(e.key === "=" || e.key === "Enter") {
+        calculateButton();
+    } else if(e.key === "/") {
+        divide();
+    } else if(e.key === "*") {
+        multiply();
+    } else if(e.key === "-") {
+        subtract();
+    } else if(e.key === "+") {
+        add();
+    }
+}

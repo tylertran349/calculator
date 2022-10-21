@@ -7,12 +7,28 @@ screenBottom = document.getElementById('current-calculation');
 let arrString;
 
 function seven() {
+    if(lastInputType === "calculate") {
+        currentRunningNumber += "7";
+        currentCalculation = currentRunningNumber;
+        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
+        operatorsAndNums[0] = currentRunningNumber;
+        screenBottom.textContent = currentRunningNumber;
+        return;
+    }
     currentRunningNumber += "7";
     screenBottom.textContent = currentRunningNumber;
     lastInputType = "number";
 }
 
 function four() {
+    if(lastInputType === "calculate") {
+        currentRunningNumber += "4";
+        currentCalculation = currentRunningNumber;
+        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
+        operatorsAndNums[0] = currentRunningNumber;
+        screenBottom.textContent = currentRunningNumber;
+        return;
+    }
     currentRunningNumber += "4";
     screenBottom.textContent = currentRunningNumber;
     lastInputType = "number";
@@ -22,6 +38,7 @@ function one() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "1";
         currentCalculation = currentRunningNumber;
+        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
         screenBottom.textContent = currentRunningNumber;
         return;
@@ -35,6 +52,7 @@ function zero() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "0";
         currentCalculation = currentRunningNumber;
+        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
         screenBottom.textContent = currentRunningNumber;
         return;
@@ -48,6 +66,7 @@ function eight() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "8";
         currentCalculation = currentRunningNumber;
+        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
         screenBottom.textContent = currentRunningNumber;
         return;
@@ -61,6 +80,7 @@ function five() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "5";
         currentCalculation = currentRunningNumber;
+        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
         screenBottom.textContent = currentRunningNumber;
         return;
@@ -74,6 +94,7 @@ function two() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "2";
         currentCalculation = currentRunningNumber;
+        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
         screenBottom.textContent = currentRunningNumber;
         return;
@@ -87,6 +108,7 @@ function nine() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "9";
         currentCalculation = currentRunningNumber;
+        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
         screenBottom.textContent = currentRunningNumber;
         return;
@@ -100,6 +122,7 @@ function six() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "6";
         currentCalculation = currentRunningNumber;
+        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
         screenBottom.textContent = currentRunningNumber;
         return;
@@ -113,6 +136,7 @@ function three() {
     if(lastInputType === "calculate") {
         currentRunningNumber += "3";
         currentCalculation = currentRunningNumber;
+        currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
         operatorsAndNums[0] = currentRunningNumber;
         screenBottom.textContent = currentRunningNumber;
         return;
@@ -199,6 +223,8 @@ function calculate() {
         screenTop.textContent += currentRunningNumber;
     }
     currentCalculation = +(operatorsAndNums[0]);
+    currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
+
     for(let i = 1; i < operatorsAndNums.length - 1; i++) {
         // If dividing by 0, reset calculator to default values and output error
         if(operatorsAndNums[i] === "/" && operatorsAndNums[i+1] === "0") {
@@ -222,6 +248,7 @@ function calculate() {
             currentCalculation *= +(operatorsAndNums[i+1]);
         }
     }
+    currentCalculation = +(Math.round(currentCalculation + "e+3")  + "e-3"); // Round to 3 decimal places
     operatorsAndNums = [];
     operatorsAndNums.push(currentCalculation);
     currentRunningNumber = currentCalculation;

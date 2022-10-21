@@ -1,10 +1,45 @@
-operatorsAndNums = [];
+operatorsAndNums = []; // Array that stores all numbers and operators in the current calculation
 currentRunningNumber = "";
 let currentCalculation;
 lastInputType = "";
 screenTop = document.getElementById('operators-and-nums');
 screenBottom = document.getElementById('current-calculation');
 let arrString;
+
+function backspace() {
+    if(lastInputType === "calculate") {
+        currentRunningNumber = currentRunningNumber.toString(); // Convert current running number from int to string before removing last digit from it
+        currentRunningNumber = currentRunningNumber.slice(0, -1); // Remove last digit from current running number
+        currentCalculation = currentRunningNumber;
+        operatorsAndNums[0] = currentRunningNumber;
+        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+        lastInputType = "backspace";
+        return;
+    }
+    if(lastInputType === "number" || lastInputType === "backspace") {
+        currentRunningNumber = currentRunningNumber.slice(0, currentRunningNumber.length - 1);
+        currentCalculation = null;
+
+        // If current running number is nothing and current calculation is null, remove the only value still remaining in the array and set the current calculation to 0
+        if(currentRunningNumber === "" && currentCalculation === null) {
+            operatorsAndNums.pop();
+            currentCalculation = 0;
+            screenBottom.textContent = "0";
+            lastInputType = "backspace";
+            return;
+        }
+
+        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+        lastInputType = "backspace";
+        return;
+    }
+    if(lastInputType === "operator") {
+        operatorsAndNums.pop(); // Remove last operator from array
+        screenTop.textContent = +(Math.round(calculate() + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+        lastInputType = "backspace";
+        return;
+    }
+}
 
 function seven() {
     if(lastInputType === "calculate") {
@@ -276,5 +311,7 @@ function onKeyPress(k) {
         subtract();
     } else if(k.key === "+") {
         add();
+    } else if(k.key === "Backspace") {
+        backspace();
     }
 }

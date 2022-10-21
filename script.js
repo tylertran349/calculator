@@ -259,7 +259,6 @@ function calculate() {
 // Add keyboard support
 document.addEventListener("keydown", onKeyPress);
 function onKeyPress(e) {
-    console.log(e.key);
     if(e.key === "7") {
         seven();
     } else if(e.key === "4") {

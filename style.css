@@ -26,6 +26,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     border-radius: 8px;
+    box-shadow: 0 3px 12px rgb(0 0 0 / 0.7); /* Edge shadow */
 }
 
 #calculator-screen {
@@ -50,6 +51,7 @@ body {
     margin-right: 16px;
     color: black;
     font-size: 36px;
+    font-weight: 550;
 }
 
 #buttons-container {
@@ -82,7 +84,19 @@ body {
     bottom: 0;
     width: 100%;
     text-align: center;
-    color: #36454F;
+    color: #252f35;
     font-size: 18px;
     padding-bottom: 8px;
 }
+
+/*
+Darkens button whenever any button is clicked
+If changing color to darken to, you must change all 4 HTML color values below
+*/
+#button:active {
+    background: #777777;
+    -webkit-box-shadow: inset 0px 0px 5px #777777;
+       -moz-box-shadow: inset 0px 0px 5px #777777;
+            box-shadow: inset 0px 0px 5px #777777;
+     outline: none;
+  }

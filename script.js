@@ -355,5 +355,7 @@ function onKeyPress(k) {
         backspace();
     } else if(k.key === "%") {
         modulo();
+    } else if(k.key=== ".") {
+        decimalPoint();
     }
 }

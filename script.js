@@ -234,6 +234,20 @@ function divide() {
     lastInputType = "operator";
 }
 
+function modulo() {
+    // If last input was an operator, break out of function since you can't have two consecutive operators
+    if(lastInputType === "operator") {
+        return;
+    }
+
+    operatorsAndNums.push(currentRunningNumber);
+    screenTop.textContent = +(Math.round(calculate() + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    currentRunningNumber = "";
+    operatorsAndNums.push("%");
+    screenTop.textContent += " % ";
+    lastInputType = "operator";
+}
+
 function calculateButton() {
     calculate();
     if(lastInputType !== "calculate" && lastInputType !== "error") {
@@ -257,6 +271,14 @@ function calculate() {
             lastInputType = "error";
             return;
         }
+        // If either operand (number next to an operator) next to a modulo operator is a decimal number, reset calculator to default values and output error since modulo isn't supposed to be run on integers
+        if((!Number.isInteger(+(operatorsAndNums[i-1]))) && (operatorsAndNums[i] === "%") || (!Number.isInteger(+(operatorsAndNums[i+1]))) && (operatorsAndNums[i] === "%")) {
+            reset();
+            screenTop.textContent = "";
+            screenBottom.textContent = "Math Error";
+            lastInputType = "error";
+            return;
+        }
 
         if(operatorsAndNums[i] === "+") {
             currentCalculation += +(operatorsAndNums[i+1]);
@@ -269,6 +291,9 @@ function calculate() {
         } 
         if(operatorsAndNums[i] === "*") {
             currentCalculation *= +(operatorsAndNums[i+1]);
+        }
+        if(operatorsAndNums[i] === "%") {
+            currentCalculation %= +(operatorsAndNums[i+1]);
         }
     }
     operatorsAndNums = [];
@@ -313,5 +338,7 @@ function onKeyPress(k) {
         add();
     } else if(k.key === "Backspace") {
         backspace();
+    } else if(k.key === "%") {
+        modulo();
     }
 }

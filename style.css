@@ -43,14 +43,14 @@ body {
     border-radius: 5px;
 }
 
-#operators-and-nums {
+#screen-top {
     margin-top: 16px;
     margin-right: 16px;
     color: black;
     font-size: 18px;
 }
 
-#current-calculation {
+#screen-bottom {
     margin-bottom: 16px;
     margin-right: 16px;
     color: black;
@@ -93,16 +93,10 @@ body {
     padding-bottom: 8px;
 }
 
-/*
-Darkens button whenever any button is clicked
-If changing color to darken to, you must change all 4 HTML color values below
-*/
+/* Darkens button whenever any button is clicked */
 #button:active {
     background: #777777;
-    -webkit-box-shadow: inset 0px 0px 5px #777777;
-       -moz-box-shadow: inset 0px 0px 5px #777777;
-            box-shadow: inset 0px 0px 5px #777777;
-     outline: none;
+    outline: none;
 }
 
 #button.backspace {
@@ -111,5 +105,10 @@ If changing color to darken to, you must change all 4 HTML color values below
 
 #button.reset {
     font-size: 14px;
+    font-weight: bold;
+}
+
+#button.decimalPoint {
+    font-size: 30px;
     font-weight: bold;
 }

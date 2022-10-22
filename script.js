@@ -2,8 +2,8 @@ operatorsAndNums = []; // Array that stores all numbers and operators in the cur
 currentRunningNumber = "";
 let currentCalculation;
 lastInputType = "";
-screenTop = document.getElementById('operators-and-nums');
-screenBottom = document.getElementById('current-calculation');
+screenTop = document.getElementById('screen-top');
+screenBottom = document.getElementById('screen-bottom');
 let arrString;
 
 function backspace() {
@@ -39,6 +39,21 @@ function backspace() {
         lastInputType = "backspace";
         return;
     }
+}
+
+function decimalPoint() {
+    if(Number.isInteger(+(currentRunningNumber)) && Number.isInteger(+(currentCalculation))) {
+        if(lastInputType === "calculate") {
+            currentRunningNumber += ".";
+            currentCalculation = currentRunningNumber;
+            operatorsAndNums[0] = currentRunningNumber;
+            screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+            return;
+        }
+    }
+    currentRunningNumber += ".";
+    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    lastInputType = "number";
 }
 
 function seven() {
@@ -264,7 +279,7 @@ function calculate() {
     currentCalculation = +(operatorsAndNums[0]);
     for(let i = 1; i < operatorsAndNums.length - 1; i++) {
         // If dividing by 0, reset calculator to default values and output error
-        if(operatorsAndNums[i] === "/" && operatorsAndNums[i+1] === "0") {
+        if(((operatorsAndNums[i] === "/") || (operatorsAndNums[i] === "%")) && (operatorsAndNums[i+1] === "0")) {
             reset();
             screenTop.textContent = "";
             screenBottom.textContent = "Math Error";

@@ -37,25 +37,32 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
-    text-overflow: clip;
-    white-space: nowrap;
-    overflow: hidden;
     border-radius: 5px;
 }
 
 #screen-top {
     margin-top: 16px;
-    margin-right: 16px;
+    margin-right: 14px;
     color: black;
     font-size: 18px;
+    width: 260px;
+    text-overflow: clip;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: right;
 }
 
 #screen-bottom {
     margin-bottom: 16px;
-    margin-right: 16px;
+    margin-right: 14px;
     color: black;
     font-size: 36px;
     font-weight: 550;
+    width: 260px;
+    text-overflow: clip;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: right;
 }
 
 #buttons-container {

@@ -29,13 +29,13 @@ function backspace() {
             return;
         }
 
-        screenBottom.textContent = currentRunningNumber.slice(-12);
+        screenBottom.textContent = currentRunningNumber.toString().slice(-12);
         lastInputType = "backspace";
         return;
     }
     if(lastInputType === "operator") {
         operatorsAndNums.pop(); // Remove last operator from array
-        screenTop.textContent = currentRunningNumber; // Round output to 3 decimal places if it's a decimal number
+        screenTop.textContent = currentRunningNumber.toString().slice(-12);
         lastInputType = "backspace";
         return;
     }
@@ -49,14 +49,14 @@ function decimalPoint() {
             currentRunningNumber += ".";
             currentCalculation = currentRunningNumber;
             operatorsAndNums[0] = currentRunningNumber;
-            screenBottom.textContent = currentRunningNumber.slice(-12);
+            screenBottom.textContent = currentRunningNumber.toString().slice(-12);
             return;
         }
     } else {
         return;
     }
     currentRunningNumber += ".";
-    screenBottom.textContent = currentRunningNumber.slice(-12);
+    screenBottom.textContent = currentRunningNumber.toString().slice(-12);
 }
 
 function seven() {
@@ -64,11 +64,11 @@ function seven() {
         currentRunningNumber += "7";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber.slice(-12);
+        screenBottom.textContent = currentRunningNumber.toString().slice(-12);
         return;
     }
     currentRunningNumber += "7";
-    screenBottom.textContent = currentRunningNumber.slice(-12);
+    screenBottom.textContent = currentRunningNumber.toString().slice(-12);
     lastInputType = "number";
 }
 
@@ -77,11 +77,11 @@ function four() {
         currentRunningNumber += "4";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber.slice(-12);
+        screenBottom.textContent = currentRunningNumber.toString().slice(-12);
         return;
     }
     currentRunningNumber += "4";
-    screenBottom.textContent = currentRunningNumber.slice(-12);
+    screenBottom.textContent = currentRunningNumber.toString().slice(-12);
     lastInputType = "number";
 }
 
@@ -90,11 +90,11 @@ function one() {
         currentRunningNumber += "1";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber.slice(-12);
+        screenBottom.textContent = currentRunningNumber.toString().slice(-12);
         return;
     }
     currentRunningNumber += "1";
-    screenBottom.textContent = currentRunningNumber.slice(-12);
+    screenBottom.textContent = currentRunningNumber.toString().slice(-12);
     lastInputType = "number";
 }
 
@@ -103,11 +103,11 @@ function zero() {
         currentRunningNumber += "0";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber.slice(-12);
+        screenBottom.textContent = currentRunningNumber.toString().slice(-12);
         return;
     }
     currentRunningNumber += "0";
-    screenBottom.textContent = currentRunningNumber.slice(-12);
+    screenBottom.textContent = currentRunningNumber.toString().slice(-12);
     lastInputType = "number";
 }
 
@@ -116,11 +116,11 @@ function eight() {
         currentRunningNumber += "8";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber.slice(-12);
+        screenBottom.textContent = currentRunningNumber.toString().slice(-12);
         return;
     }
     currentRunningNumber += "8";
-    screenBottom.textContent = currentRunningNumber.slice(-12);
+    screenBottom.textContent = currentRunningNumber.toString().slice(-12);
     lastInputType = "number";
 }
 
@@ -129,11 +129,11 @@ function five() {
         currentRunningNumber += "5";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber.slice(-12);
+        screenBottom.textContent = currentRunningNumber.toString().slice(-12);
         return;
     }
     currentRunningNumber += "5";
-    screenBottom.textContent = currentRunningNumber.slice(-12);
+    screenBottom.textContent = currentRunningNumber.toString().slice(-12);
     lastInputType = "number";
 }
 
@@ -142,11 +142,11 @@ function two() {
         currentRunningNumber += "2";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber.slice(-12);
+        screenBottom.textContent = currentRunningNumber.toString().slice(-12);
         return;
     }
     currentRunningNumber += "2";
-    screenBottom.textContent = currentRunningNumber.slice(-12);
+    screenBottom.textContent = currentRunningNumber.toString().slice(-12);
     lastInputType = "number";
 }
 
@@ -155,11 +155,11 @@ function nine() {
         currentRunningNumber += "9";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber.slice(-12);
+        screenBottom.textContent = currentRunningNumber.toString().slice(-12);
         return;
     }
     currentRunningNumber += "9";
-    screenBottom.textContent = currentRunningNumber.slice(-12);
+    screenBottom.textContent = currentRunningNumber.toString().slice(-12);
     lastInputType = "number";
 }
 
@@ -168,11 +168,11 @@ function six() {
         currentRunningNumber += "6";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber.slice(-12);
+        screenBottom.textContent = currentRunningNumber.toString().slice(-12);
         return;
     }
     currentRunningNumber += "6";
-    screenBottom.textContent = currentRunningNumber.slice(-12);
+    screenBottom.textContent = currentRunningNumber.toString().slice(-12);
     lastInputType = "number";
 }
 
@@ -181,11 +181,11 @@ function three() {
         currentRunningNumber += "3";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = currentRunningNumber.slice(-12);
+        screenBottom.textContent = currentRunningNumber.toString().slice(-12);
         return;
     }
     currentRunningNumber += "3";
-    screenBottom.textContent = currentRunningNumber.slice(-12);
+    screenBottom.textContent = currentRunningNumber.toString().slice(-12);
     lastInputType = "number";
 }
 
@@ -207,6 +207,7 @@ function add() {
     currentRunningNumber = "";
     operatorsAndNums.push("+");
     screenTop.textContent += " + ";
+    screenTop.textContent = screenTop.textContent.toString().slice(-30);
     lastInputType = "operator";
 }
 
@@ -221,6 +222,7 @@ function subtract() {
     currentRunningNumber = "";
     operatorsAndNums.push("-");
     screenTop.textContent += " - ";
+    screenTop.textContent = screenTop.textContent.toString().slice(-30);
     lastInputType = "operator";
 }
 
@@ -235,6 +237,7 @@ function multiply() {
     currentRunningNumber = "";
     operatorsAndNums.push("*");
     screenTop.textContent += " * ";
+    screenTop.textContent = screenTop.textContent.toString().slice(-30);
     lastInputType = "operator";
 }
 
@@ -249,6 +252,7 @@ function divide() {
     currentRunningNumber = "";
     operatorsAndNums.push("/");
     screenTop.textContent += " ÷ ";
+    screenTop.textContent = screenTop.textContent.toString().slice(-30);
     lastInputType = "operator";
 }
 
@@ -263,6 +267,7 @@ function modulo() {
     currentRunningNumber = "";
     operatorsAndNums.push("%");
     screenTop.textContent += " % ";
+    screenTop.textContent = screenTop.textContent.toString().slice(-30);
     lastInputType = "operator";
 }
 
@@ -270,6 +275,7 @@ function calculateButton() {
     calculate();
     if(lastInputType !== "calculate" && lastInputType !== "error") {
         screenTop.textContent += " =";
+        screenTop.textContent = screenTop.textContent.toString().slice(-30);
     }
     lastInputType = "calculate";
 }
@@ -278,6 +284,7 @@ function calculate() {
     if(lastInputType === "number") {
         operatorsAndNums.push(currentRunningNumber);
         screenTop.textContent += currentRunningNumber;
+        screenTop.textContent = screenTop.textContent.toString().slice(-30);
     }
     currentCalculation = +(operatorsAndNums[0]);
     for(let i = 1; i < operatorsAndNums.length - 1; i++) {

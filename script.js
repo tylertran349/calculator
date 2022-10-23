@@ -42,16 +42,8 @@ function backspace() {
 }
 
 function decimalPoint() {
+    currentRunningNumber = +(currentRunningNumber);
     currentCalculation = +(currentRunningNumber);
-    console.log("currentRunningNumber: " + currentRunningNumber);
-    console.log("currentCalculation: " + currentCalculation);
-
-    /*
-    if((!Number.isInteger(+(currentRunningNumber))) || !Number.isInteger(+(currentCalculation))) {
-        return;
-    }
-    */
-    
     if(Number.isInteger(+(currentRunningNumber)) && Number.isInteger(+(currentCalculation))) {
         if(lastInputType === "calculate") {
             currentRunningNumber += ".";
@@ -63,10 +55,9 @@ function decimalPoint() {
     } else {
         return;
     }
-
     currentRunningNumber += ".";
     screenBottom.textContent = currentRunningNumber;
-    lastInputType = "number";
+    //lastInputType = "number";
 }
 
 function seven() {
@@ -307,7 +298,6 @@ function calculate() {
             lastInputType = "error";
             return;
         }
-
         if(operatorsAndNums[i] === "+") {
             currentCalculation += +(operatorsAndNums[i+1]);
         } 
@@ -325,9 +315,10 @@ function calculate() {
         }
     }
     operatorsAndNums = [];
+    currentCalculation = +(Math.round(currentCalculation + "e" + 5)  + "e-" + 5); // Round all current calculations to 5 decimal places to minimize chances of inaccurate floating-point arithmetic results and text overflowing screen
     operatorsAndNums.push(currentCalculation);
     currentRunningNumber = currentCalculation;
-    screenBottom.textContent = +(Math.round(currentCalculation + "e" + 3)  + "e-" + 3); // Round decimal numbers to 3 decimal places
+    screenBottom.textContent = +currentCalculation;
     return currentCalculation;
 }
 

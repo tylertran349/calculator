@@ -62,7 +62,6 @@ function decimalPoint() {
     }
     currentRunningNumber += ".";
     screenBottom.textContent = currentRunningNumber;
-    //lastInputType = "number";
 }
 
 function seven() {

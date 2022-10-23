@@ -39,13 +39,30 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     border-radius: 5px;
     padding: 16px;
+  /*
     white-space: nowrap;
     overflow: hidden;
     text-align: right;
+  */
 }
+
+
+#text-div {
+  background: #E5E4E2;
+  width: 248px;
+  height: 104px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: right;
+}
+
 
 #screen-top {
     color: black;
@@ -53,9 +70,9 @@ body {
 }
 
 #screen-bottom {
-    color: black;
-    font-size: 36px;
-    font-weight: 550;
+  color: black;
+  font-size: 36px;
+  font-weight: 550;
 }
 
 #buttons-container {

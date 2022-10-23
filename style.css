@@ -34,45 +34,35 @@ body {
 
 #calculator-screen {
     background: #E5E4E2;
-    width: 73%;
+    width: 255.5px;
     height: 104px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     border-radius: 5px;
-    padding: 16px;
-  /*
-    white-space: nowrap;
-    overflow: hidden;
-    text-align: right;
-  */
+    padding: 14.5px;
 }
-
-
-#text-div {
-  background: #E5E4E2;
-  width: 248px;
-  height: 104px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  white-space: nowrap;
-  overflow: hidden;
-  text-align: right;
-}
-
 
 #screen-top {
     color: black;
     font-size: 18px;
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+    margin-right: 24px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 #screen-bottom {
   color: black;
   font-size: 36px;
   font-weight: 550;
+  width: 100%;
+  display: inline-block;
+  text-align: right;
+  margin-right: 24px;
 }
 
 #buttons-container {

@@ -48,7 +48,6 @@ body {
     color: black;
     font-size: 18px;
     width: 260px;
-    text-overflow: clip;
     white-space: nowrap;
     overflow: hidden;
     text-align: right;
@@ -59,7 +58,6 @@ body {
     font-size: 36px;
     font-weight: 550;
     width: 260px;
-    text-overflow: clip;
     white-space: nowrap;
     overflow: hidden;
     text-align: right;

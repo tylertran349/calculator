@@ -39,28 +39,23 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     border-radius: 5px;
     padding: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: right;
 }
 
 #screen-top {
     color: black;
     font-size: 18px;
-    width: 260px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-align: right;
 }
 
 #screen-bottom {
     color: black;
     font-size: 36px;
     font-weight: 550;
-    width: 260px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-align: right;
 }
 
 #buttons-container {

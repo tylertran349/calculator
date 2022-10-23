@@ -7,6 +7,11 @@ screenBottom = document.getElementById('screen-bottom');
 let arrString;
 
 function backspace() {
+    // Fix edge case where hitting backspace after hitting reset causes screen output to be blank when it should actually be 0
+    if(lastInputType === "reset") {
+        reset();
+        return;
+    }
     if(lastInputType === "calculate") {
         currentRunningNumber = currentRunningNumber.toString(); // Convert current running number from int to string before removing last digit from it
         currentRunningNumber = currentRunningNumber.slice(0, -1); // Remove last digit from current running number
@@ -192,9 +197,11 @@ function three() {
 
 function reset() {
     currentRunningNumber = "";
+    currentCalculation = 0;
     operatorsAndNums = [];
     screenTop.textContent = "";
-    screenBottom.textContent = 0;
+    screenBottom.textContent = currentCalculation;
+    lastInputType = "reset";
 }
 
 function add() {

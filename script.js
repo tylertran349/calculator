@@ -12,7 +12,7 @@ function backspace() {
         currentRunningNumber = currentRunningNumber.slice(0, -1); // Remove last digit from current running number
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+        screenBottom.textContent = currentRunningNumber;
         lastInputType = "backspace";
         return;
     }
@@ -29,30 +29,43 @@ function backspace() {
             return;
         }
 
-        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+        screenBottom.textContent = currentRunningNumber;
         lastInputType = "backspace";
         return;
     }
     if(lastInputType === "operator") {
         operatorsAndNums.pop(); // Remove last operator from array
-        screenTop.textContent = +(Math.round(calculate() + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+        screenTop.textContent = currentRunningNumber; // Round output to 3 decimal places if it's a decimal number
         lastInputType = "backspace";
         return;
     }
 }
 
 function decimalPoint() {
+    currentCalculation = +(currentRunningNumber);
+    console.log("currentRunningNumber: " + currentRunningNumber);
+    console.log("currentCalculation: " + currentCalculation);
+
+    /*
+    if((!Number.isInteger(+(currentRunningNumber))) || !Number.isInteger(+(currentCalculation))) {
+        return;
+    }
+    */
+    
     if(Number.isInteger(+(currentRunningNumber)) && Number.isInteger(+(currentCalculation))) {
         if(lastInputType === "calculate") {
             currentRunningNumber += ".";
             currentCalculation = currentRunningNumber;
             operatorsAndNums[0] = currentRunningNumber;
-            screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+            screenBottom.textContent = currentRunningNumber;
             return;
         }
+    } else {
+        return;
     }
+
     currentRunningNumber += ".";
-    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    screenBottom.textContent = currentRunningNumber;
     lastInputType = "number";
 }
 
@@ -61,11 +74,11 @@ function seven() {
         currentRunningNumber += "7";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+        screenBottom.textContent = currentRunningNumber;
         return;
     }
     currentRunningNumber += "7";
-    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    screenBottom.textContent = currentRunningNumber;
     lastInputType = "number";
 }
 
@@ -74,11 +87,11 @@ function four() {
         currentRunningNumber += "4";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+        screenBottom.textContent = currentRunningNumber;
         return;
     }
     currentRunningNumber += "4";
-    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    screenBottom.textContent = currentRunningNumber;
     lastInputType = "number";
 }
 
@@ -87,11 +100,11 @@ function one() {
         currentRunningNumber += "1";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+        screenBottom.textContent = currentRunningNumber;
         return;
     }
     currentRunningNumber += "1";
-    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    screenBottom.textContent = currentRunningNumber;
     lastInputType = "number";
 }
 
@@ -100,11 +113,11 @@ function zero() {
         currentRunningNumber += "0";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+        screenBottom.textContent = currentRunningNumber;
         return;
     }
     currentRunningNumber += "0";
-    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    screenBottom.textContent = currentRunningNumber;
     lastInputType = "number";
 }
 
@@ -113,11 +126,11 @@ function eight() {
         currentRunningNumber += "8";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+        screenBottom.textContent = currentRunningNumber;
         return;
     }
     currentRunningNumber += "8";
-    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    screenBottom.textContent = currentRunningNumber;
     lastInputType = "number";
 }
 
@@ -126,11 +139,11 @@ function five() {
         currentRunningNumber += "5";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+        screenBottom.textContent = currentRunningNumber;
         return;
     }
     currentRunningNumber += "5";
-    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    screenBottom.textContent = currentRunningNumber;
     lastInputType = "number";
 }
 
@@ -139,11 +152,11 @@ function two() {
         currentRunningNumber += "2";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+        screenBottom.textContent = currentRunningNumber;
         return;
     }
     currentRunningNumber += "2";
-    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    screenBottom.textContent = currentRunningNumber;
     lastInputType = "number";
 }
 
@@ -152,11 +165,11 @@ function nine() {
         currentRunningNumber += "9";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+        screenBottom.textContent = currentRunningNumber;
         return;
     }
     currentRunningNumber += "9";
-    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    screenBottom.textContent = currentRunningNumber;
     lastInputType = "number";
 }
 
@@ -165,11 +178,11 @@ function six() {
         currentRunningNumber += "6";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+        screenBottom.textContent = currentRunningNumber;
         return;
     }
     currentRunningNumber += "6";
-    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    screenBottom.textContent = currentRunningNumber;
     lastInputType = "number";
 }
 
@@ -178,11 +191,11 @@ function three() {
         currentRunningNumber += "3";
         currentCalculation = currentRunningNumber;
         operatorsAndNums[0] = currentRunningNumber;
-        screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+        screenBottom.textContent = currentRunningNumber;
         return;
     }
     currentRunningNumber += "3";
-    screenBottom.textContent = +(Math.round(currentRunningNumber + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    screenBottom.textContent = currentRunningNumber;
     lastInputType = "number";
 }
 
@@ -200,7 +213,7 @@ function add() {
     }
 
     operatorsAndNums.push(currentRunningNumber);
-    screenTop.textContent = +(Math.round(calculate() + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    screenTop.textContent = +(calculate());
     currentRunningNumber = "";
     operatorsAndNums.push("+");
     screenTop.textContent += " + ";
@@ -214,7 +227,7 @@ function subtract() {
     }
 
     operatorsAndNums.push(currentRunningNumber);
-    screenTop.textContent = +(Math.round(calculate() + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    screenTop.textContent = +(calculate());
     currentRunningNumber = "";
     operatorsAndNums.push("-");
     screenTop.textContent += " - ";
@@ -228,7 +241,7 @@ function multiply() {
     }
 
     operatorsAndNums.push(currentRunningNumber);
-    screenTop.textContent = +(Math.round(calculate() + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    screenTop.textContent = +(calculate());
     currentRunningNumber = "";
     operatorsAndNums.push("*");
     screenTop.textContent += " * ";
@@ -242,7 +255,7 @@ function divide() {
     }
 
     operatorsAndNums.push(currentRunningNumber);
-    screenTop.textContent = +(Math.round(calculate() + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    screenTop.textContent = +(calculate());
     currentRunningNumber = "";
     operatorsAndNums.push("/");
     screenTop.textContent += " ÷ ";
@@ -256,7 +269,7 @@ function modulo() {
     }
 
     operatorsAndNums.push(currentRunningNumber);
-    screenTop.textContent = +(Math.round(calculate() + "e" + 3)  + "e-" + 3); // Round output to 3 decimal places if it's a decimal number
+    screenTop.textContent = +(calculate());
     currentRunningNumber = "";
     operatorsAndNums.push("%");
     screenTop.textContent += " % ";
@@ -318,44 +331,103 @@ function calculate() {
     return currentCalculation;
 }
 
-// Add keyboard support
-document.addEventListener("keydown", onKeyPress);
-function onKeyPress(k) {
-    if(k.key === "7") {
+// 2 event listeners below are for keyboard support 
+// Darken button and call button functions when a key corresponding to a specific button is pressed by the user
+window.addEventListener('keydown', (event) => {
+    if(event.key === "7") {
+        document.querySelector('.seven').style.background = "#777777"; // Darkens button when this specific key is pressed
         seven();
-    } else if(k.key === "4") {
+    } else if(event.key === "4") {
+        document.querySelector('.four').style.background = "#777777";
         four();
-    } else if(k.key === "1") {
+    } else if(event.key === "1") {
+        document.querySelector('.one').style.background = "#777777";
         one();
-    } else if(k.key === "0") {
+    } else if(event.key === "0") {
+        document.querySelector('.zero').style.background = "#777777";
         zero();
-    } else if(k.key === "8") {
+    } else if(event.key === "8") {
+        document.querySelector('.eight').style.background = "#777777";
         eight();
-    } else if(k.key === "5") {
+    } else if(event.key === "5") {
+        document.querySelector('.five').style.background = "#777777";
         five();
-    } else if(k.key === "2") {
+    } else if(event.key === "2") {
+        document.querySelector('.two').style.background = "#777777";
         two();
-    } else if(k.key === "9") {
+    } else if(event.key === "9") {
+        document.querySelector('.nine').style.background = "#777777";
         nine();
-    } else if(k.key === "6") {
+    } else if(event.key === "6") {
+        document.querySelector('.six').style.background = "#777777";
         six();
-    } else if(k.key === "3") {
+    } else if(event.key === "3") {
+        document.querySelector('.three').style.background = "#777777";
         three();
-    } else if(k.key === "=" || k.key === "Enter") {
+    } else if(event.key === "=" || event.key === "Enter") {
+        document.querySelector('.calculate').style.background = "#777777";
         calculateButton();
-    } else if(k.key === "/") {
+    } else if(event.key === "/") {
+        document.querySelector('.divide').style.background = "#777777";
         divide();
-    } else if(k.key === "*") {
+    } else if(event.key === "*") {
+        document.querySelector('.multiply').style.background = "#777777";
         multiply();
-    } else if(k.key === "-") {
+    } else if(event.key === "-") {
+        document.querySelector('.subtract').style.background = "#777777";
         subtract();
-    } else if(k.key === "+") {
+    } else if(event.key === "+") {
+        document.querySelector('.add').style.background = "#777777";
         add();
-    } else if(k.key === "Backspace") {
+    } else if(event.key === "Backspace") {
+        document.querySelector('.backspace').style.background = "#777777";
         backspace();
-    } else if(k.key === "%") {
+    } else if(event.key === "%") {
+        document.querySelector('.modulo').style.background = "#777777";
         modulo();
-    } else if(k.key=== ".") {
+    } else if(event.key === ".") {
+        document.querySelector('.decimalPoint').style.background = "#777777";
         decimalPoint();
     }
-}
+});
+
+// Restore default button color when a key corresponding to a specific button is released by the user
+window.addEventListener('keyup', (event) => {
+    if(event.key === "7") {
+        document.querySelector('.seven').style.background = "#A9A9A9"; // Restores default button color when user releases this specific key
+    } else if(event.key === "4") {
+        document.querySelector('.four').style.background = "#A9A9A9";
+    } else if(event.key === "1") {
+        document.querySelector('.one').style.background = "#A9A9A9";
+    } else if(event.key === "0") {
+        document.querySelector('.zero').style.background = "#A9A9A9";
+    } else if(event.key === "8") {
+        document.querySelector('.eight').style.background = "#A9A9A9";
+    } else if(event.key === "5") {
+        document.querySelector('.five').style.background = "#A9A9A9";
+    } else if(event.key === "2") {
+        document.querySelector('.two').style.background = "#A9A9A9";
+    } else if(event.key === "9") {
+        document.querySelector('.nine').style.background = "#A9A9A9";
+    } else if(event.key === "6") {
+        document.querySelector('.six').style.background = "#A9A9A9";
+    } else if(event.key === "3") {
+        document.querySelector('.three').style.background = "#A9A9A9";
+    } else if(event.key === "=" || event.key === "Enter") {
+        document.querySelector('.calculate').style.background = "#A9A9A9";
+    } else if(event.key === "/") {
+        document.querySelector('.divide').style.background = "#A9A9A9";
+    } else if(event.key === "*") {
+        document.querySelector('.multiply').style.background = "#A9A9A9";
+    } else if(event.key === "-") {
+        document.querySelector('.subtract').style.background = "#A9A9A9";
+    } else if(event.key === "+") {
+        document.querySelector('.add').style.background = "#A9A9A9";
+    } else if(event.key === "Backspace") {
+        document.querySelector('.backspace').style.background = "#A9A9A9";
+    } else if(event.key === "%") {
+        document.querySelector('.modulo').style.background = "#A9A9A9";
+    } else if(event.key === ".") {
+        document.querySelector('.decimalPoint').style.background = "#A9A9A9";
+    }
+});

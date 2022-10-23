@@ -27,22 +27,24 @@ body {
     align-items: center;
     border-radius: 8px;
     box-shadow: 0 3px 15px rgb(0 0 0 / 0.7); /* Edge shadow */
+    padding-top: 16px;
+    padding-bottom: 16px;
+    gap: 16px;
 }
 
 #calculator-screen {
     background: #E5E4E2;
-    width: 82.5%;
-    height: 120px;
+    width: 73%;
+    height: 104px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     border-radius: 5px;
+    padding: 16px;
 }
 
 #screen-top {
-    margin-top: 16px;
-    margin-right: 14px;
     color: black;
     font-size: 18px;
     width: 260px;
@@ -53,8 +55,6 @@ body {
 }
 
 #screen-bottom {
-    margin-bottom: 16px;
-    margin-right: 14px;
     color: black;
     font-size: 36px;
     font-weight: 550;
@@ -103,7 +103,6 @@ body {
 /* Darkens button whenever any button is clicked */
 #button:active {
     background: #777777;
-    outline: none;
 }
 
 #button.backspace {

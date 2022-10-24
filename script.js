@@ -191,7 +191,7 @@ function three() {
 
 function reset() {
     currentRunningNumber = "";
-    currentCalculation = 0;
+    currentCalculation = "";
     console.log(currentRunningNumber);
     console.log(currentCalculation);
     operatorsAndNums = [];

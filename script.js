@@ -210,7 +210,6 @@ function add() {
     currentRunningNumber = "";
     operatorsAndNums.push("+");
     screenTop.textContent += " + ";
-    screenTop.textContent = screenTop.textContent.toString().slice(-30);
     lastInputType = "operator";
 }
 
@@ -225,7 +224,6 @@ function subtract() {
     currentRunningNumber = "";
     operatorsAndNums.push("-");
     screenTop.textContent += " - ";
-    screenTop.textContent = screenTop.textContent.toString().slice(-30);
     lastInputType = "operator";
 }
 
@@ -240,7 +238,6 @@ function multiply() {
     currentRunningNumber = "";
     operatorsAndNums.push("*");
     screenTop.textContent += " * ";
-    screenTop.textContent = screenTop.textContent.toString().slice(-30);
     lastInputType = "operator";
 }
 
@@ -255,7 +252,6 @@ function divide() {
     currentRunningNumber = "";
     operatorsAndNums.push("/");
     screenTop.textContent += " ÷ ";
-    screenTop.textContent = screenTop.textContent.toString().slice(-30);
     lastInputType = "operator";
 }
 
@@ -270,7 +266,6 @@ function modulo() {
     currentRunningNumber = "";
     operatorsAndNums.push("%");
     screenTop.textContent += " % ";
-    screenTop.textContent = screenTop.textContent.toString().slice(-30);
     lastInputType = "operator";
 }
 
@@ -278,7 +273,6 @@ function calculateButton() {
     calculate();
     if(lastInputType !== "calculate" && lastInputType !== "error") {
         screenTop.textContent += " =";
-        screenTop.textContent = screenTop.textContent.toString().slice(-30);
     }
     lastInputType = "calculate";
 }
@@ -287,7 +281,6 @@ function calculate() {
     if(lastInputType === "number") {
         operatorsAndNums.push(currentRunningNumber);
         screenTop.textContent += currentRunningNumber;
-        screenTop.textContent = screenTop.textContent.toString().slice(-30);
     }
     currentCalculation = +(operatorsAndNums[0]);
     for(let i = 1; i < operatorsAndNums.length - 1; i++) {

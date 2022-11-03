@@ -292,6 +292,7 @@ function calculate() {
             lastInputType = "error";
             return;
         }
+
         // If either operand (number next to an operator) next to a modulo operator is a decimal number, reset calculator to default values and output error since modulo isn't supposed to be run on integers
         if((!Number.isInteger(+(operatorsAndNums[i-1]))) && (operatorsAndNums[i] === "%") || (!Number.isInteger(+(operatorsAndNums[i+1]))) && (operatorsAndNums[i] === "%")) {
             reset();
@@ -300,6 +301,7 @@ function calculate() {
             lastInputType = "error";
             return;
         }
+
         if(operatorsAndNums[i] === "+") {
             currentCalculation += +(operatorsAndNums[i+1]);
         } 
@@ -317,9 +319,19 @@ function calculate() {
         }
     }
     operatorsAndNums = [];
-    currentCalculation = +(Math.round(currentCalculation + "e" + 5)  + "e-" + 5); // Round all current calculations to 5 decimal places to minimize chances of inaccurate floating-point arithmetic results and text overflowing screen
+    currentCalculation = +(Math.round(currentCalculation + "e" + 5)  + "e-" + 5); // Round all current calculations to 5 decimal places to minimize chances of text overflowing screen
     operatorsAndNums.push(currentCalculation);
     currentRunningNumber = currentCalculation;
+
+    // If calculation results in NaN (failed operation on numbers), reset calculator to default values and output error
+    if(isNaN(+(currentCalculation))) {
+        reset();
+        screenTop.textContent = "";
+        screenBottom.textContent = "Invalid Number";
+        lastInputType = "error";
+        return;
+    }
+
     screenBottom.textContent = currentCalculation.toString().slice(-12);
     return currentCalculation;
 }

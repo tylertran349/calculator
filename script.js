@@ -327,7 +327,7 @@ function calculate() {
     if(isNaN(+(currentCalculation))) {
         reset();
         screenTop.textContent = "";
-        screenBottom.textContent = "Invalid Number";
+        screenBottom.textContent = "NaN";
         lastInputType = "error";
         return;
     }

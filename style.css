@@ -79,6 +79,7 @@ body {
     border: 0;
     border-radius: 0.5rem;
     text-align: center;
+    font-family: inherit;
 }
 
 #buttons-row-1 .modulo, #buttons-row-1 .backspace, #buttons-row-2 #button, #buttons-row-3 #button, #buttons-row-4 #button, #buttons-row-5 #button {
@@ -90,6 +91,7 @@ body {
     border: 0;
     border-radius: 0.5rem;
     text-align: center;
+    font-family: inherit;
 }
 
 #footer {
